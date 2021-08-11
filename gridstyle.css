@@ -1,0 +1,55 @@
+/* tutorial 2 */
+
+body {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #fff;
+}
+#content div {
+  background: #3bbced;
+  padding: 30px;
+}
+#content div:nth-child(odd) {
+  background: #777;
+}
+#content {
+  display: grid;
+  /* grid-template-columns: 30% 20% 50%;  */
+  /* grid-template-columns: 1fr 2fr 1fr;  */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: repeat(4, 100px); */
+  /* grid-template-rows: repeat(4, minmax(100px, auto)); */
+  max-width: 960px;
+  margin: 0 auto;
+  grid-gap: 10px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, minmax(150px, auto));
+  /* grid-gap: 1em; // add gap to column and row */
+  /* grid-column-gap: 1em; // add gap to column */
+  /* grid-row-gap: 1em; // add gap to row */
+}
+.one {
+  /* grid-column-start: 1;*/
+  grid-column: 1/3;
+}
+.two {
+  /* grid-column: 3/7; //span column 3 to 7 */
+  grid-column: 3/7;
+}
+.three {
+  grid-column: 1/4;
+  /* grid-row: 2/4; // span row 2 to 4 */
+  grid-row: 2/4;
+}
+.four {
+  grid-column: 4/7;
+  grid-row: 2/4;
+}
+.five {
+  grid-column: 3/7;
+}
+.six {
+  grid-row: 4;
+  grid-column: 1/3;
+}
+/* Tutorial 3 */
