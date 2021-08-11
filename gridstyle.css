@@ -14,19 +14,19 @@ body {
 }
 #content {
   display: grid;
-  /* grid-template-columns: 30% 20% 50%;  */
-  /* grid-template-columns: 1fr 2fr 1fr;  */
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* grid-template-rows: repeat(4, 100px); */
-  /* grid-template-rows: repeat(4, minmax(100px, auto)); */
+  grid-template-columns: 30% 20% 50%;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  grid-template-rows: repeat(4, minmax(100px, auto));
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, minmax(150px, auto));
-  /* grid-gap: 1em; // add gap to column and row */
-  /* grid-column-gap: 1em; // add gap to column */
-  /* grid-row-gap: 1em; // add gap to row */
+  grid-gap: 1em; // add gap to column and row
+  grid-column-gap: 1em; // add gap to column
+  grid-row-gap: 1em; // add gap to row
 }
 .one {
   /* grid-column-start: 1;*/
