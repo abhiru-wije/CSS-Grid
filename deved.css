@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.box1 {
+  background: chartreuse;
+  grid-row: 1/3;
+}
+.box2 {
+  background: burlywood;
+}
+.box3 {
+  background: cadetblue;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: minmax(100px, auto);
+}
