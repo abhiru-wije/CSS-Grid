@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*grid-template-column
+grid-template-row
+grid-area */
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 200px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  /* grid-template-rows: 100px repeat(2, 200px) 100px; this method is also possible */
+  grid-template-areas:
+    "abhiru abhiru abhiru abhiru"
+    "content content content nav"
+    "content content content nav"
+    "footer footer footer footer";
+}
+.header {
+  grid-area: abhiru;
+  background: #000;
+}
+.content {
+  background: red;
+  grid-area: content;
+}
+.nav {
+  background: yellow;
+  grid-area: nav;
+}
+.footer {
+  background: green;
+  grid-area: footer;
+}
+
+/* Rows and columns */
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+}
+.header {
+  background: #000;
+  grid-column: 1/5;
+}
+.content {
+  background: red;
+  grid-column: 1/4;
+  grid-row: 2/4;
+}
+.nav {
+  background: green;
+  grid-row: 2/4;
+}
+.footer {
+  background: yellow;
+  /* grid-column: 1/5; -- first-method */
+  /* grid-column: 1/-1; second-method */
+  /* grid-column: span 4; third-method */
+}
+
+/* Line naming  */
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line];
+  grid-template-rows: repeat(4, 100px);
+}
+.header {
+  background: #000;
+  grid-column: 1/5;
+}
+.content {
+  background: red;
+  grid-column: 1/4;
+  grid-row: 2/4;
+}
+.nav {
+  background: green;
+  grid-row: 2/4;
+}
+.footer {
+  background: yellow;
+  /* grid-column: 1/5; -- first-method */
+  /* grid-column: 1/-1; second-method */
+  /* grid-column: span 4; third-method */
+}
+
+/* grid-template */
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  /* grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line]; -- naming method */
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-rows: repeat(4, 1fr);
+  /*-when you define row to 1fr method, you should define the height of the grid area*/
+}
+.header {
+  background: #000;
+}
+.content {
+  background: red;
+}
+.nav {
+  background: green;
+}
+.footer {
+  background: yellow;
+}
