@@ -3,16 +3,16 @@
   padding: 0;
 }
 
-/*grid-template-column
+/* grid-template-column
 grid-template-row
 grid-area */
 
-.grid {
+/* .grid {
   display: grid;
   grid-template-columns: auto 200px;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: repeat(4, 100px);
-  /* grid-template-rows: 100px repeat(2, 200px) 100px; this method is also possible */
+  grid-template-rows: 100px repeat(2, 200px) 100px; this method is also possible
   grid-template-areas:
     "abhiru abhiru abhiru abhiru"
     "content content content nav"
@@ -34,11 +34,11 @@ grid-area */
 .footer {
   background: green;
   grid-area: footer;
-}
+} */
 
 /* Rows and columns */
 
-.grid {
+/* .grid {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(4, 100px);
@@ -59,14 +59,14 @@ grid-area */
 }
 .footer {
   background: yellow;
-  /* grid-column: 1/5; -- first-method */
-  /* grid-column: 1/-1; second-method */
-  /* grid-column: span 4; third-method */
-}
+  grid-column: 1/5; -- first-method
+  grid-column: 1/-1; second-method
+  grid-column: span 4; third-method
+} */
 
 /* Line naming  */
 
-.grid {
+/* .grid {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line];
@@ -87,26 +87,35 @@ grid-area */
 }
 .footer {
   background: yellow;
-  /* grid-column: 1/5; -- first-method */
-  /* grid-column: 1/-1; second-method */
-  /* grid-column: span 4; third-method */
-}
+  grid-column: 1/5; -- first-method
+  grid-column: 1/-1; second-method
+  grid-column: span 4; third-method
+} */
 
 /* grid-template */
 
 .grid {
+  /* background: PINK;
   display: grid;
   grid-gap: 10px;
+  height: 250vh; */
   /* grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line]; -- naming method */
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 100px); */
 
-  grid-template-rows: repeat(4, 1fr);
-  /*-when you define row to 1fr method, you should define the height of the grid area*/
+  /* grid-template-rows: repeat(4, 100px); */
+  /* -when you define row to 1fr method, you should define the height of the grid area */
+  /* place-items: stretch center; --> vertical stretch and horizontal center */
+  /* place-content: end center; -- move end(vertical) and center(horiz.) */
+  /* justify-content: center; -- move entire grid content horizontal way*/
+  /* align-content: space-between; -- align grid vertical way */
 }
-.header {
+/* .header {
   background: #000;
-}
-.content {
+  align-self: center; ---align item into vertical axis
+  justify-self: center; --- align items into horizontal axis
+  place-self: end center; --end(vertical align) center (horizo. align)
+} */
+/* .content {
   background: red;
 }
 .nav {
@@ -114,4 +123,60 @@ grid-area */
 }
 .footer {
   background: yellow;
+} */
+
+/* grid auto rwos */
+
+.numbers {
+  display: grid;
+  background: pink;
+  grid-gap: 10px;
+  /* grid-template-columns: repeat(4, 100px); */
+  /* minmax statement --> lock 100px at any given range(min(100px) max(1fr)*/
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-rows: repeat(4, 100px);
+  grid-auto-rows: 100px;
+  /* grid-auto-flow: column; --change grid direction to column (like flex-direction) */
+}
+
+.items:nth-child(even) {
+  background: green;
+}
+.items:nth-child(odd) {
+  background: red;
+}
+
+.fills {
+  margin-top: 20px;
+  display: grid;
+  background: pink;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-rows: 100px;
+}
+.fills-2 {
+  margin-top: 20px;
+  display: grid;
+  background: pink;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 100px;
+}
+.item:nth-child(even) {
+  background: green;
+}
+.item:nth-child(odd) {
+  background: red;
+}
+
+/* min-content max-content */
+
+.fills-3 {
+  margin-top: 20px;
+  display: grid;
+  background: pink;
+  grid-gap: 10px;
+  grid-auto-rows: 100px;
+  /* grid-template-columns: max-content min-content; */
+  grid-template-columns: repeat(5, minmax(max-content, 1fr));
 }
